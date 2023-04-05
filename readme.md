@@ -1,4 +1,4 @@
-# Backend
+# Frontend
 Esse é o repositório do backend de um sistema de gerenciamento de produtos, desenvolvido com Node.js e Express.
 # Como Executar
 Certifique-se de ter o Node.js(v18.15.0) e o npm(v9.6.3) instalado na sua máquina.
