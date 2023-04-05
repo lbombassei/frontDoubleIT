@@ -87,3 +87,43 @@ button {
   cursor: pointer;
   border: none;
 }
+
+@media (max-width: 992px) {
+  .left {
+    width: 100%;
+    height: auto;
+  }
+  
+  h1 {
+    top: 20px;
+    left: 20px;
+  }
+  
+  hr {
+    top: 100px;
+    left: 20px;
+    width: 80%;
+  }
+  
+  form {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  input,
+  button {
+    width: 80%;
+    max-width: 384px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  hr {
+    top: 80px;
+  }
+}

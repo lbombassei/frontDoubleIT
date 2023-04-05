@@ -1,4 +1,5 @@
 .add-product {
+    margin-bottom: 20px;
     text-align: left;
     font: normal normal 600 16px/20px Helvetica;
     letter-spacing: 0px;
@@ -19,4 +20,33 @@
     float: right;
   }
 
-  
+  hr{
+    margin-bottom: 4rem;
+    border: 1px solid #CCCCCC;
+    opacity: 1;
+    position: relative;
+    top: 50px;
+  }
+  /* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .add-product {
+    font-size: 14px;
+  }
+
+  #add-product-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .add-product {
+    font-size: 12px;
+  }
+
+  #add-product-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

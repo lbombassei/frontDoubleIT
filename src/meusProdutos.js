@@ -16,6 +16,7 @@ function loadProducts() {
       while (produtosDiv.firstChild) {
         produtosDiv.removeChild(produtosDiv.firstChild);
       }
+      
       data.produtos.forEach(produto => {
         const produtoDiv = document.createElement('div');
         produtoDiv.className = 'produto';

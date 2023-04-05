@@ -17,4 +17,15 @@
   .password-field i.fa-eye:hover {
     color: #725172;
   }
+  @media only screen and (max-width: 768px) {
+    .password-field i {
+      right: 5px;
+    }
+  }
   
+  @media only screen and (max-width: 576px) {
+    .password-field i {
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
