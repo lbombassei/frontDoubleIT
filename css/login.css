@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 790px;
+  height: 768px;
+  background: transparent linear-gradient(180deg, #623262 0%, #F2D8DB 100%) 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  top: -200px;
+  left: -140px;
+  width: 96px;
+  height: 44px;
+  position: absolute;
+  display:flex;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal bold 36px/44px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1F1F1F;
+  opacity: 1;
+}
+
+hr {
+  /* Layout Properties */
+  top: -140px;
+  left: -140px;
+  width: 404px;
+  height: 0px;
+  position: absolute;
+  /* UI Properties */
+  border: 1px solid #CCCCCC;
+  opacity: 1;
+}
+
+form {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-34%, -55%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 384px;
+  height: 44px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #848484;
+  border-radius: 6px;
+  opacity: 1;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+button {
+  width: 384px;
+  height: 54px;
+  color: #FFFFFF;
+  background: #725172 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 6px #B7B7B729;
+  border-radius: 8px;
+  opacity: 1;
+  cursor: pointer;
+  border: none;
+}

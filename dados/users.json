@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+          "id": 1,
+          "nome": "João da Silva",
+          "email": "joao.silva@teste.com",
+          "idade": 30,
+          "password": "123456"
+        },
+        {
+          "id": 2,
+          "nome": "Maria Souza",
+          "email": "maria.souza@teste.com",
+          "idade": 25,
+          "password": "abcdef"
+        }
+      ]
+  }

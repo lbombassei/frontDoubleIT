@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Login</title>
+  <link rel="stylesheet" href="../css/login.css"></link>
+  <link rel="stylesheet" href="../css/senha.css"></link>
+  <link rel="stylesheet" href="https://use.typekit.net/hzy7zyt.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="left"></div>
+  <div class="right">
+    <h1>ENTRE.</h1>
+    <hr>
+    <form id="login-form" target="js/login.js" method="POST">
+      
+      <input type="email" id="email" name="email" placeholder="Email">
+      
+      <div class="form-group">
+        <div class="password-field">
+          <input type="password" id="password" name="password" placeholder="Senha">
+          <i class="fa fa-eye-slash" id="toggle-password"></i>
+        </div>
+      </div>
+      <button type="submit" >Enviar</button>
+    </form>
+  </div>
+</body>
+<script type="module"src="../src/login.js"></script>
+</html>

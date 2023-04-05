@@ -1,0 +1,20 @@
+.password-field {
+    position: relative;
+  }
+  
+  .password-field i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-34%);
+    cursor: pointer;
+  }
+  
+  .password-field i.fa-eye-slash:hover {
+    color: #725172;
+  }
+  
+  .password-field i.fa-eye:hover {
+    color: #725172;
+  }
+  

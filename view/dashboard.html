@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/produtos.css">
+  <link rel="stylesheet" href="css/addProduto.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+          <img src="/img/israeltech.png" alt="IsraelTech" style="z-index: 1;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="meus-produtos">Meus Produtos</a>
+            </li>
+          </ul>
+          <div class="user-menu">
+
+            <img src="/img/foto_leo.jpg" alt="Foto do usuário" class="profile-image" />
+            <span id="user-name" class="user-name"></span>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <h1 class="welcome-message"></h1>
+      <!-- conteúdo da página aqui -->
+    </div>
+    <div class="container-fluid">
+      <div class="add-product">
+
+        <button id="add-product-button" style="display: none;">Adicionar produto</button>
+        <h2 id="titulo-produtos" style="display:none">Meus Produtos.</h2>
+      </div>
+      <div><hr style="border: 1px solid #CCCCCC; opacity: 1;"></div>
+      <div id="product-list" class="produto-list"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="powered-by">
+      powered by <strong>DOUBLEIT</strong>
+    </div>
+  </footer>
+
+    <div class="modal" id="add-product-modal" tabindex="-1">
+      <div class="modal-dialog" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <form id="add-product-form" enctype="multipart/form-data">
+            <div class="form-row">
+              
+              <input type="text" id="nome" name="nome" placeholder="Nome" >
+            </div>
+            <div class="form-row">
+              
+              <textarea id="descricao" name="descricao" placeholder="Descrição"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-col">
+                
+                <div class="input-group">
+                  <input type="text" id="preco" name="preco" placeholder="Preço" >
+                </div>
+              </div>
+              <div class="form-col">
+                
+                <div class="input-group">
+                  <input type="date" id="data-remessa" name="data-remessa"  placeholder="Data Remessa">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              
+              <input type="text" id="categorias" name="categorias" placeholder="Categorias" >
+            </div>
+            <div class="form-row">
+              
+              <div class="image-upload" id="image-upload">
+                <div class="drag-text">
+                  <p>Arraste a imagem ou</p>
+                  <label for="file-input">Selecione</label>
+                  <input id="file-input" type="file" name="image" accept="image/*" />
+                </div>
+              </div>
+              <div id="preview">
+                <img id="preview-image" alt="Preview" style="width: 80px; height: 80px;"></img>
+                <span id="filename"></span>
+              </div>
+            </div>
+            <div class="form-row buttons">
+              <button type="button" class="btn-cancel">Cancelar</button>
+              <button type="submit" class="btn-save">Salvar</button>
+              <button type="submit" class="btn-update">Atualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    
+</body>
+<!-- <script src="dist/bundle.js"></script> -->
+<script type="text/javascript" src="dist/dashboard.js"></script>
+<script type="text/javascript" src="src/meusProdutos.js"></script>
+<script type="text/javascript" src="src/addProduto.js"></script>
+<script type="text/javascript" src="src/editProduto.js"></script>
+<script type="text/javascript" src="src/deleteProduto.js"></script>
+</html>
