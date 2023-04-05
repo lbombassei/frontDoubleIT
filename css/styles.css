@@ -35,6 +35,7 @@ header {
 /* Main */
 main {
   padding: 50px;
+  height: 100%;
 }
 
 .profile-image {

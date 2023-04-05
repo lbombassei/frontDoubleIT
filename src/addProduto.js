@@ -2,6 +2,8 @@ document.getElementById("add-product-button").addEventListener("click", function
     document.getElementById("add-product-modal").style.display = "block";
     document.getElementsByClassName("modal-title")[0].innerHTML = "Novo Produto";
     document.getElementsByClassName("btn-update")[0].style.display = 'none'
+    document.getElementsByClassName("btn-save")[0].style.display = 'block'
+    document.getElementById('add-product-form').reset();
   });
   
   // Fecha o modal ao clicar no botão "X" (ou em qualquer outra parte da tela)
