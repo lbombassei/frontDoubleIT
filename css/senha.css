@@ -1,31 +1,62 @@
 .password-field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+}
+
+.password-field i {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.password-field i.fa-eye-slash:hover,
+.password-field i.fa-eye:hover {
+  color: #725172;
+}
+
+@media only screen and (max-width: 768px) {
+  .password-field i {
+    right: 5px;
+  }
+  .password-field {
+    display: flex;
+    align-items: center;
     position: relative;
+    width: 500px;
+    height: 100px;
+  }
+  
+  .password-field i {
+    position: relative;
+    right: 5px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .password-field i {
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .password-field {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 500px;
+    height: 100px;
   }
   
   .password-field i {
     position: absolute;
+    right: 5px;
     top: 50%;
-    right: 10px;
-    transform: translateY(-34%);
     cursor: pointer;
+    transform: translateY(-50%);
   }
-  
-  .password-field i.fa-eye-slash:hover {
-    color: #725172;
-  }
-  
-  .password-field i.fa-eye:hover {
-    color: #725172;
-  }
-  @media only screen and (max-width: 768px) {
-    .password-field i {
-      right: 5px;
-    }
-  }
-  
-  @media only screen and (max-width: 576px) {
-    .password-field i {
-      right: 0;
-      transform: translateY(-50%);
-    }
-  }
+}

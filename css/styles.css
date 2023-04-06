@@ -68,73 +68,32 @@ main {
 
 /* Media Queries */
 
-@media only screen and (max-width: 768px) {
-  .navbar-brand img {
-    height: 40px;
-  }
-  
-  .nav-link {
-    margin-right: 20px;
-  }
-  .collapse.navbar-collapse {
-    position: fixed;
-    top: 80px;
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: #FFFFFF;
-    z-index: 1000;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9999;
   }
-  .dropdown-toggle img {
-    height: 25px;
-    margin-right: 5px;
-  }
-  
-  .profile-image {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .user-name {
-    font-size: 14px;
-  }
-  
-  .powered-by {
-    font-size: 10px;
-  }
+  .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 70% !important;
 }
+  .navbar-nav {
+    display: block;
+    margin: 0;
+  }
 
-@media only screen and (max-width: 576px) {
-  header {
-    height: 60px;
+  .navbar-nav .nav-item {
+    display: block;
+    margin: 0;
   }
-  
-  .navbar-brand img {
-    height: 30px;
-    margin-right: 10px;
-  }
-  
-  .nav-link {
-    margin-right: 10px;
-  }
-  
-  .dropdown-toggle img {
-    height: 20px;
-    margin-right: 5px;
-  }
-  
-  .profile-image {
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-  }
-  
-  .user-name {
-    font-size: 12px;
-  }
-  
-  .powered-by {
-    font-size: 8px;
-    padding: 5px;
+
+  .navbar-nav .nav-link {
+    display: block;
+    padding: 1rem;
+    color: #333;
   }
 }

@@ -8,7 +8,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 790px;
+  width: 100%; /* mudança */
   height: 100%;
   background: transparent linear-gradient(180deg, #623262 0%, #F2D8DB 100%) 0% 0% no-repeat padding-box;
   opacity: 1;
@@ -23,17 +23,17 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* mudança */
   margin-bottom: 1rem;
-  top: -200px;
-  left: -140px;
-  width: 96px;
-  height: 44px;
-  position: absolute;
+  top: -90px; /* mudança */
+  left: 460px; /* mudança */
+  width: auto; /* mudança */
+  height: auto; /* mudança */
+  position: relative; /* mudança */
   display:flex;
   /* UI Properties */
   text-align: left;
-  font: normal normal bold 36px/44px Proxima Nova;
+  font: normal normal bold 28px/36px Proxima Nova; /* mudança */
   letter-spacing: 0px;
   color: #1F1F1F;
   opacity: 1;
@@ -41,11 +41,11 @@ h1 {
 
 hr {
   /* Layout Properties */
-  top: -140px;
-  left: -140px;
-  width: 404px;
+  top: -100px; /* mudança */
+  left: 370px; /* mudança */
+  width: 80%; /* mudança */
   height: 0px;
-  position: absolute;
+  position: relative; /* mudança */
   /* UI Properties */
   border: 1px solid #CCCCCC;
   opacity: 1;
@@ -53,9 +53,9 @@ hr {
 
 form {
   position: absolute;
-  top: 55%;
-  left: 55%;
-  transform: translate(-34%, -55%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,20 +64,22 @@ form {
 label {
   margin-bottom: 10px;
 }
-
-input {
-  width: 384px;
-  height: 44px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  border: 1px solid #848484;
-  border-radius: 6px;
-  opacity: 1;
-  margin-bottom: 10px;
-  padding: 10px;
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+/* .input-container input {
+  width: 80%; 
+  margin: 0 10px; } */
+.inputLogin {
+  position: relative;
+  left: 120px;
+} 
 
-button {
-  width: 384px;
+.button {
+  width: 80%; /* mudança */
+  max-width: 384px;
   height: 54px;
   color: #FFFFFF;
   background: #725172 0% 0% no-repeat padding-box;
@@ -86,44 +88,107 @@ button {
   opacity: 1;
   cursor: pointer;
   border: none;
+  position: relative;
+  left: 120px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 767px) {
   .left {
+    display: none;
+  }
+
+  .right {
+    margin: auto;
     width: 100%;
-    height: 100%;
+    max-width: 400px;
+    padding: 20px;
   }
-  
+
   h1 {
-    top: 20px;
-    left: 20px;
+    font-size: 3rem;
+    margin-top: 0;
+    text-align: center;
   }
-  
+
   hr {
-    top: 100px;
-    left: 20px;
-    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
-  
+
   form {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-control {
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
   }
   
-  input,
-  button {
-    width: 80%;
-    max-width: 384px;
+  .row#rowForm {
+    max-width: 768px;
+    width: 100%;
+  }
+  
+  .left,
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right {
+    flex-direction: column;
+  }
+  .inputLogin {
+    position: relative;
+    left: 0px;
+  } 
+  .button{
+    position: relative;
+    left: 0px;
+  }
+  hr {
+    top: -130px;
+    left: 0;
+    width: 30%;
+    height: 0px;
+    position: relative;
+    border: 1px solid #CCCCCC;
+    opacity: 1;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    top: -100px;
+    left: 0px;
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    text-align: left;
+    font: normal normal bold 28px/36px Proxima Nova;
+    letter-spacing: 0px;
+    color: #1F1F1F;
+    opacity: 1;
   }
 }
 
-@media (max-width: 576px) {
-  h1 {
-    font-size: 2rem;
-  }
-  
-  hr {
-    top: 80px;
-  }
-}
