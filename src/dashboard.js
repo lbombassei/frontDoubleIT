@@ -7,7 +7,9 @@ const jwt = require('jsonwebtoken');
 function showWelcomeMessage(document, token) {
   const decodedToken = jwt.decode(token);
   const userName = decodedToken.name;
-
+  const mainElement = document.querySelector('main');
+  mainElement.innerHTML = '';
+  sessionStorage.setItem('nome', userName);
   const welcomeMessage = document.querySelector('.welcome-message');
   const profile = document.querySelector('#user-name');
   const tituloProdutos = document.querySelector('#titulo-produtos');

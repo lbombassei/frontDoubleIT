@@ -13,6 +13,25 @@ togglePassword.addEventListener('click', function() {
   this.classList.toggle('fa-eye');
 });
 
+const leftCol = document.querySelector('.left');
+const rightCol = document.querySelector('.right');
+const mediaQuery = window.matchMedia("(min-width: 768px) and (max-width: 992px)");
+
+const handleMediaQuery = (e) => {
+  if (e.matches) {
+    leftCol.style.display = 'none'
+    rightCol.classList.remove('col-md-6');
+    rightCol.classList.add('col-md-12', 'form-container');
+  } else {
+    leftCol.style.display = 'block'
+    rightCol.classList.remove('d-flex', 'flex-column', 'align-items-center', 'justify-content-center', 'col-md-12');
+    rightCol.classList.add('col-md-6');
+  }
+}
+
+mediaQuery.addListener(handleMediaQuery);
+handleMediaQuery(mediaQuery);
+
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
 

@@ -1,3 +1,4 @@
+
 function loadProducts() {
   fetch('http://localhost:3000/api/products', {
     headers: {
@@ -13,63 +14,64 @@ function loadProducts() {
     .then(data => {
       console.log(data)
       const produtosDiv = document.getElementById('product-list');
-      while (produtosDiv.firstChild) {
-        produtosDiv.removeChild(produtosDiv.firstChild);
-      }
-      
+      produtosDiv.innerHTML = '';
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'row';
+
       data.produtos.forEach(produto => {
         const produtoDiv = document.createElement('div');
-        produtoDiv.className = 'produto';
+        produtoDiv.className = 'col-sm-6 col-md-4 col-lg-3 mb-4';
 
-        const iconesDiv = document.createElement('div');
-        iconesDiv.className = 'icones';
-
-        const editarLink = document.createElement('a');
-        editarLink.href = '#';
-        editarLink.className = "edit";
-        
-        editarLink.innerHTML = '<i class="fa-solid fa-pencil " ></i>';
-        iconesDiv.appendChild(editarLink);
-
-        const excluirLink = document.createElement('a');
-        excluirLink.href = '#';
-        excluirLink.className = "delete"
-        excluirLink.innerHTML = '<i class="fa-solid fa-trash " ></i>';
-        iconesDiv.appendChild(excluirLink);
-
-        produtoDiv.appendChild(iconesDiv);
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card h-100';
 
         const img = document.createElement('img');
-        img.style.maxWidth = '239px';
-        img.style.maxHeight = '139px';
-        img.style.width = 'auto';
-        img.style.height = 'auto';
+        img.className = 'card-img-top';
         if (produto.foto.startsWith("img/")) {
           img.src = produto.foto;
         } else {
           img.src = "data:image/png;base64," + produto.foto;
         }
-        img.className = "image";
         img.alt = produto.nome;
-        produtoDiv.appendChild(img);
+        cardDiv.appendChild(img);
 
-        const nome = document.createElement('h3');
-        nome.className = "nome";
+        const cardBodyDiv = document.createElement('div');
+        cardBodyDiv.className = 'card-body d-flex flex-column justify-content-between';
+
+        const iconesDiv = document.createElement('div');
+        iconesDiv.className = 'icones align-self-end';
+
+        const editarLink = document.createElement('a');
+        editarLink.href = '#';
+        editarLink.className = "edit mr-2";
+        editarLink.innerHTML = '<i class="fa-solid fa-pencil"></i>';
+        iconesDiv.appendChild(editarLink);
+
+        const excluirLink = document.createElement('a');
+        excluirLink.href = '#';
+        excluirLink.className = "delete";
+        excluirLink.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        iconesDiv.appendChild(excluirLink);
+
+        cardBodyDiv.appendChild(iconesDiv);
+
+        const nome = document.createElement('h5');
+        nome.className = "card-title";
         nome.textContent = produto.nome;
-        produtoDiv.appendChild(nome);
+        cardBodyDiv.appendChild(nome);
 
         const descricao = document.createElement('p');
-        descricao.className = 'descricao';
+        descricao.className = 'card-text';
         descricao.textContent = produto.descricao;
-        produtoDiv.appendChild(descricao);
+        cardBodyDiv.appendChild(descricao);
 
-        const preco = document.createElement('div');
-        preco.className = 'preco';
+        const preco = document.createElement('h6');
+        preco.className = 'card-subtitle mb-2 text-muted';
         preco.textContent = `R$ ${produto.preco}`;
-        produtoDiv.appendChild(preco);
+        cardBodyDiv.appendChild(preco);
 
         const categorias = document.createElement('div');
-        categorias.className = 'categorias';
+        categorias.className = 'categorias mt-auto';
         const categoriaArray = produto.categoria.split(',');
         categoriaArray.forEach(categoria => {
           const categoriaSpan = document.createElement('span');
@@ -77,9 +79,11 @@ function loadProducts() {
           categoriaSpan.textContent = categoria.trim();
           categorias.appendChild(categoriaSpan);
         });
-        produtoDiv.appendChild(categorias);
+        cardBodyDiv.appendChild(categorias);
 
-        produtosDiv.appendChild(produtoDiv);
+        cardDiv.appendChild(cardBodyDiv);
+        produtoDiv.appendChild(cardDiv);
+        rowDiv.appendChild(produtoDiv);
 
         editarLink.addEventListener('click', function(event) {
           event.preventDefault();
@@ -90,6 +94,8 @@ function loadProducts() {
           confirmDeleteProduct(produto.id);
         });
       });
+
+      produtosDiv.appendChild(rowDiv);
     })
     .catch(error => {
       if (error.message === 'Não autorizado') {
@@ -101,11 +107,13 @@ function loadProducts() {
 }
 
 
+
 const myProductsButton = document.getElementById('meus-produtos');
 myProductsButton.addEventListener('click', function() {
   const welcomeMessage = document.querySelector('.welcome-message');
   welcomeMessage.style.display = 'none';
 
+  document.getElementById('produtos-lista').style.display= 'block'
   const tituloProdutos = document.getElementById('titulo-produtos');
   tituloProdutos.style.display = 'block';
   tituloProdutos.innerText = "Meus Produtos."
@@ -115,4 +123,8 @@ myProductsButton.addEventListener('click', function() {
   loadProducts();
 });
 
-
+const inicioButton = document.getElementById('inicio');
+inicioButton.addEventListener('click', () =>{
+  document.getElementsByClassName('welcome-message')[0].style.display = 'block';
+  document.getElementById('produtos-lista').style.display= 'none'
+});
