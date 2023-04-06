@@ -26,10 +26,10 @@
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarNav" ">
+          <ul class="navbar-nav mr-auto float-right">
             <li class="nav-item">
-              <a class="nav-link" href="#">Início</a>
+              <a class="nav-link " href="#" id="inicio">Início</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" id="meus-produtos">Meus Produtos</a>
@@ -46,12 +46,12 @@
     </div>
   </header>
   <main>
-    <div class="container-fluid">
+    <div class="container-fluid" id="welcome-message">
       <h1 class="welcome-message"></h1>
       <!-- conteúdo da página aqui -->
     </div>
-    <div class="container-fluid">
-      <div class="add-product">
+    <div class="container-fluid" id="produtos-lista">
+      <div class="add-product ">
 
         <button id="add-product-button" style="display: none;">Adicionar produto</button>
         <h2 id="titulo-produtos" style="display:none">Meus Produtos.</h2>

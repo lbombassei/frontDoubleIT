@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Página de Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/login.css"></link>
   <link rel="stylesheet" href="../css/senha.css"></link>
   <link rel="stylesheet" href="https://use.typekit.net/hzy7zyt.css"></link>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-  <div class="left"></div>
-  <div class="right">
-    <h1>ENTRE.</h1>
-    <hr>
-    <form id="login-form" target="../src/login.js" method="POST">
-      
-      <input type="email" id="email" name="email" placeholder="Email">
-      
-      <div class="form-group">
-        <div class="password-field">
-          <input type="password" id="password" name="password" placeholder="Senha">
-          <i class="fa fa-eye-slash" id="toggle-password"></i>
+<body class="d-flex justify-content-center align-items-center">
+  <div class="container-fluid" style="margin-top: 80%">
+    <div class="row" id="rowForm">
+      <div class="col-md-6 left"></div>
+      <div class="col-md-6 right">
+        <h1>ENTRE.</h1>
+        <hr>
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <form id="login-form" target="../src/login.js" method="POST" class="input-container">
+            <input type="email" id="email" name="email" placeholder="Email" class="inputLogin form-control">
+            <div class="form-group">
+              <div class="password-field">
+                <input type="password" id="password" name="password" placeholder="Senha" class="inputLogin form-control">
+                <i class="fa fa-eye-slash" id="toggle-password"></i>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary button">Enviar</button>
+          </form>
         </div>
       </div>
-      <button type="submit" >Enviar</button>
-    </form>
+    </div>
   </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="module"src="../src/login.js"></script>
 </html>
