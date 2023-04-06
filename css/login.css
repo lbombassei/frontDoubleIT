@@ -9,7 +9,7 @@ body {
   top: 0;
   left: 0;
   width: 790px;
-  height: 768px;
+  height: 100%;
   background: transparent linear-gradient(180deg, #623262 0%, #F2D8DB 100%) 0% 0% no-repeat padding-box;
   opacity: 1;
 }
@@ -91,7 +91,7 @@ button {
 @media (max-width: 992px) {
   .left {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   
   h1 {
